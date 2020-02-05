@@ -8,3 +8,6 @@
 2)Перейти в директорию с Delete_Service.bat через "cd Путь до файла"
 3)Запустить Delete_Service.bat
 4)Перезапустить компьютер
+
+Возможные проблемы:
+В случае если установлена 32 битная система изменить в Install_Service.bat\Delete_Service.bat Framework64 на Framework
