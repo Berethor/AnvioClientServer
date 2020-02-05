@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace TestServer
 {
     public class Server
     {
-        private TcpListener _listener;
         private int _port;
         private Thread _listenerThread;
+        private TcpListener _listener;
 
-        public Server()
-            : this(7890)
+        public Server() : this(7890)
         {
         }
 
@@ -24,6 +20,7 @@ namespace TestServer
         {
             _port = port;
         }
+
         public void Start()
         {
             _listenerThread = new Thread(ListenerThread)
@@ -31,6 +28,7 @@ namespace TestServer
                 IsBackground = true,
                 Name = "Listener"
             };
+
             _listenerThread.Start();
         }
         protected void ListenerThread()
@@ -62,10 +60,12 @@ namespace TestServer
         {
             _listener.Stop();
         }
+
         public void Suspend()
         {
             _listener.Stop();
         }
+
         public void Resume()
         {
             _listener.Start();

@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Net.Sockets;
 using System.Text;
+using System.Diagnostics;
 
 namespace TestServer
 {
@@ -18,6 +18,7 @@ namespace TestServer
         public void Process()
         {
             Socket  clientSocket = null;
+
             try
             {
                 clientSocket = client.Client;
@@ -71,6 +72,7 @@ namespace TestServer
             {
                 if (clientSocket != null)
                     clientSocket.Close();
+
                 if (client != null)
                     client.Close();
             }

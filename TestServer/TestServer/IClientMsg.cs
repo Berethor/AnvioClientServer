@@ -25,6 +25,7 @@ namespace TestServer
                         $"{(string)processes["ExecutablePath"]}");
                 }
             }
+
             return resultMsg.ToString();
         }
     }
